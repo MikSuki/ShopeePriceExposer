@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "copy-manifest": "copy src\\manifest.json extension\\",
+    "copy-manifest": "copy src\\manifest.json extension\\ && node helper.js",
     "build": "npm run copy-manifest && tsc",
     "watch": "npm run copy-manifest && tsc --watch"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/chrome": "^0.1.43",
+    "sharp": "^0.34.5",
     "typescript": "^6.0.3"
   }
 }
