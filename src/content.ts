@@ -1,0 +1,1 @@
+console.log("[ShopeePriceExposer] Content Script 已成功啟動。");

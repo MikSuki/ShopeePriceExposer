@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "ShopeePriceExposer",
+  "version": "1.0.0",
+  "description": "show real price",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://shopee.tw/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://shopee.tw/*"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "shopeepriceexposer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "copy-manifest": "copy src\\manifest.json extension\\",
+    "build": "npm run copy-manifest && tsc",
+    "watch": "npm run copy-manifest && tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.1.43",
+    "typescript": "^6.0.3"
+  }
+}
