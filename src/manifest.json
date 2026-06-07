@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "ShopeePriceExposer",
+  "version": "1.0.0",
+  "description": "show real price",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://*.shopee.tw/*",
+    "https://*.shopee.sg/*",
+    "https://*.shopee.com.my/*",
+    "https://*.shopee.co.th/*",
+    "https://*.shopee.co.id/*",
+    "https://*.shopee.vn/*",
+    "https://*.shopee.ph/*",
+    "https://*.shopee.com.br/*",
+    "https://*.shopee.com.mx/*",
+    "https://*.shopee.cl/*",
+    "https://*.shopee.co/*"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.shopee.tw/*",
+        "https://*.shopee.sg/*",
+        "https://*.shopee.com.my/*",
+        "https://*.shopee.co.th/*",
+        "https://*.shopee.co.id/*",
+        "https://*.shopee.vn/*",
+        "https://*.shopee.ph/*",
+        "https://*.shopee.com.br/*",
+        "https://*.shopee.com.mx/*",
+        "https://*.shopee.cl/*",
+        "https://*.shopee.co/*"
+      ],
+      "js": [
+        "dist/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://*.shopee.tw/*",
+        "https://*.shopee.sg/*",
+        "https://*.shopee.com.my/*",
+        "https://*.shopee.co.th/*",
+        "https://*.shopee.co.id/*",
+        "https://*.shopee.vn/*",
+        "https://*.shopee.ph/*",
+        "https://*.shopee.com.br/*",
+        "https://*.shopee.com.mx/*",
+        "https://*.shopee.cl/*",
+        "https://*.shopee.co/*"
+      ],
+      "resources": [
+        "dist/inject.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  }
+}
