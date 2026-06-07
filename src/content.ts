@@ -50,18 +50,27 @@ function exposePricesOnPage(priceMap: Array<{ itemid: number; minPrice: number; 
                 const hasGap = targetItem.maxPrice > targetItem.minPrice;
 
                 if (hasGap) {
-                    (priceSpan as HTMLElement).innerText = `${targetItem.minPrice} ~ ${targetItem.maxPrice}`;
+                    const priceHtmlElement = priceSpan as HTMLElement;
+
+                    const previousSibling = priceHtmlElement.previousElementSibling as HTMLElement;
+                    if (previousSibling && previousSibling.textContent?.trim() === '$') {
+                        previousSibling.style.display = 'none';
+                    }
+
+                    priceHtmlElement.style.color = '#1A73E8';
+                    priceHtmlElement.style.setProperty('color', '#1A73E8', 'important');
+                    priceHtmlElement.style.fontWeight = '700';
+
+                    priceHtmlElement.innerText = `$${targetItem.minPrice} ~ ${targetItem.maxPrice}`;
 
                     const parentFlex = priceSpan.closest('.overflow-hidden') || priceSpan.parentElement;
                     if (parentFlex) {
                         (parentFlex as HTMLElement).style.overflow = 'visible';
                         (parentFlex as HTMLElement).style.maxWidth = 'none';
                     }
-                } else {
-                    (priceSpan as HTMLElement).innerText = `${targetItem.minPrice}`;
-                }
 
-                itemElement.classList.add('price-exposer-done');
+                    itemElement.classList.add('price-exposer-done');
+                }
             }
         }
     });
