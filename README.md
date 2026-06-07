@@ -5,7 +5,13 @@
 
 
 ## Description
-A Chrome extension designed to uncover hidden price ranges on Shopee.
+A Chrome extension designed to uncover hidden price ranges on Shopee, displaying the absolute lowest and highest prices.
+
+<p>
+  <img src="before.png" alt="Before (Image A)" width="300" style="vertical-align: middle; margin: 10px;">
+  <span style="font-size: 32px; vertical-align: middle; margin: 0 15px; color: #EE4D2D;">➔</span>
+  <img src="after.png" alt="After (Image B)" width="300" style="vertical-align: middle; margin: 10px;">
+</p>
 
 ## Quick Start
 
