@@ -19,5 +19,11 @@
       "js": ["dist/content.js"],
       "run_at": "document_idle"
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://shopee.tw/*"],
+      "resources": ["dist/inject.js"]
+    }
   ]
 }
